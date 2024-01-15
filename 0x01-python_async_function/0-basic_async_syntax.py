@@ -2,6 +2,7 @@
 '''
 asyncnorous coroutine that returns a value of seconds waited
 '''
+import asyncio
 import random
 async def wait_random(max_delay:float = 10) -> float :
     delay = random.uniform(0, max_delay)
