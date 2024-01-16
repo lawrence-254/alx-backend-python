@@ -11,6 +11,6 @@ async def async_generator():
     '''
     yields a random number between 0 and 10 ten times
     '''
-    for i in range(100):
+    for i in range(10):
         yield random.uniform(0, 10)
         await asyncio.sleep(0.5)
