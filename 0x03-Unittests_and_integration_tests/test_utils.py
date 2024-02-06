@@ -34,10 +34,10 @@ class TestAccessNestedMap(unittest.TestCase):
         ({"a": 1}, ("a", "b"), KeyError),
     ])
     def test_access_nested_map_exception(
-        self,
-        nested_map: Dict,
-        path: Tuple[str],
-        exception: Exception) -> None:
+            self,
+            nested_map: Dict,
+            path: Tuple[str],
+            exception: Exception) -> None:
         '''
         Use the assertRaises context manager to test that a KeyError is
         raised for the following inputs (use @parameterized.expand):
