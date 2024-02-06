@@ -20,29 +20,24 @@ class TestAccessNestedMap(unittest.TestCase):
         ({"a": {"b": 2}}, ("a",), {"b": 2}),
         ({"a": {"b": 2}}, ("a", "b"), 2),
     ])
-
     def test_access_nested_map(
-            self,
-            nested_map: Dict,
+            self, nested_map: Dict,
             path: Tuple[str],
-            expected: Union[Dict, int],
-            ) -> None:
-            '''
-            method to test that the method returns what it is supposed to.
-            '''
-            self.assertEqual(access_nested_map(nested_map, path), expected)
+            expected: Union[Dict, int]) -> None:
+        '''
+        method to test that the method returns what it is supposed to.
+        '''
+        self.assertEqual(access_nested_map(nested_map, path), expected)
 
     @parameterized.expand([
         ({}, ("a",), KeyError),
         ({"a": 1}, ("a", "b"), KeyError),
     ])
-
     def test_access_nested_map_exception(
         self,
         nested_map: Dict,
         path: Tuple[str],
-        exception: Exception,
-        ) -> None:
+        exception: Exception) -> None:
         '''
         Use the assertRaises context manager to test that a KeyError is
         raised for the following inputs (use @parameterized.expand):
@@ -59,7 +54,6 @@ class TestGetJson(unittest.TestCase):
         ("http://example.com", {"payload": True}),
         ("http://holberton.io", {"payload": False}),
         ])
-
     def test_get_json(
             self,
             test_url: str,
